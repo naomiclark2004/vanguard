@@ -200,13 +200,14 @@ nav h2 {
     width: 1px;
 }
 
-nav ul {
-    /* display: flex;
+nav div {
+    display: flex;
     flex-direction: column;
-    margin-right: 20px;
-    align-items: center;
-    width: 200px; */
+    align-items: end;
+    padding: .5rem;
+}
 
+nav ul {
     width: 100%;
     margin: 0;
     padding: 0;
@@ -217,10 +218,6 @@ nav ul {
 }
 
 nav li {
-    /* padding: 20px 10px;
-    width: 100%;
-    text-align: center; */
-
     display: block;
     font-family: sans-serif;
     font-size: 1.5rem;
@@ -263,8 +260,6 @@ label span {
     position: relative;
     transition: background-color .3s ease-out;
     width: 2rem;
-    top: -.5rem;
-    left: 20rem;
 }
 
 /* BUILDS THE TOP AND BOTTOM LINES OF THE HAMBURGER*/
@@ -288,32 +283,21 @@ label span:after {
     top: -.75rem;
 }
 
-input {
+nav input {
     display: none;
 }
 
 /* ADDS HEIGHT THE NAV WHEN IT'S DROPPED DOWN */
-input:checked~ul {
-    max-height: 500px;
+nav input:checked+div {
+    height: auto;
 }
 
-/* MAKES THE MIDDLE LINE OF THE HAMBURGER DISAPPEAR */
-/* input:checked~label span {
-    background: transparent;
-} */
-/* 
-ROTATES THE TOP LINE OF THE HAMBURGER INTO ONE SIDE OF THE X */
-/* input:checked~label span:before {
-    transform: rotate(-45deg);
-} */
+nav input:checked+div>ul {
+    overflow: auto;
+    max-height: 100%;
+}
 
-/* ROTATES THE BOTTOM LINE OF THE HAMBURGER INTO ONE SIDE OF THE X */
-/* input:checked~label span:after {
-    transform: rotate(45deg);
-} */
-
-/* LOCATION OF THE HAMBURGER */
-input:checked~label:not(.steps) span {
+nav input:checked~label:not(.steps) span {
     top: -2.5rem;
 }
 
@@ -345,7 +329,6 @@ header {
 header div {
     width: 90%;
     background-color: transparent;
-    /* padding: 10px; */
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
 }
@@ -482,8 +465,12 @@ td {
     background: var(--charcoal);
     border-radius: 10px;
     position: relative;
-    /* transition: ; */
     height: 0;
+    transition: height .3s ease-in-out;
+}
+
+.bar:hover {
+    height: var(--height);
 }
 
 /* THIS ONE IS DONE FOR YOU */
@@ -575,8 +562,30 @@ footer a {
 
 @media screen and (min-width: 800px) {
 
-    nav ul {
+    nav div {
         flex-direction: row;
+        align-items: start;
+        padding: 0;
+    }
+
+
+    nav ul {
+        overflow: visible;
+        position: relative;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    nav li a {
+        display: inline-block;
+    }
+
+    label span,
+    nav input {
+        display: none;
+    }
+
+    nav li:hover {
         width: auto;
     }
 
