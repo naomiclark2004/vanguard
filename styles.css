@@ -1,26 +1,95 @@
-/* CSS BY YOUR NAME */
+/* CSS BY Naomi Clark */
 
 /* IMPORTED FONTS*/
-/* IMPORT "INTER" FROM GOOGLE FONTS"
+/* IMPORT "INTER" FROM GOOGLE FONTS" */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 /* CSS RESET */
 /* http://meyerweb.com/eric/tools/css/reset/
 v2.0 | 20110126
 License: none (public domain)
 */
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed,
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
     margin: 0;
     padding: 0;
     border: 0;
@@ -28,25 +97,44 @@ time, mark, audio, video {
     font: inherit;
     vertical-align: baseline;
 }
+
 /* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
     display: block;
 }
+
 body {
     line-height: 1;
 }
-ol, ul {
+
+ol,
+ul {
     list-style: none;
 }
-blockquote, q {
+
+blockquote,
+q {
     quotes: none;
 }
-blockquote:before, blockquote:after,
-q:before, q:after {
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
     content: '';
     content: none;
 }
+
 table {
     border-collapse: collapse;
     border-spacing: 0;
@@ -64,6 +152,23 @@ table {
 
 /* GLOBAL STYLES (MOBILE FIRST (SMALL) */
 
+body {
+    font-family: 'Inter';
+    min-width: 400px;
+}
+
+h2 {
+    font-size: 1.5rem;
+    font-weight: bolder;
+    padding: 20px 10px;
+}
+
+h3 {
+    font-size: 1.3rem;
+    font-weight: bold;
+    padding: 20px;
+}
+
 /* MIN-WIDTH OF THE PAGE SHOULD NOT GO BELOW 400PX */
 
 /* ADD A DIV WITH THE CLASS OF CONTAINER TO EVERY CONTENT CONTAINER THIS IS ALLOW THE BASE ELEMENTS TO BE 100% WIDTH, BUT CONSTRAIN THE ACTUAL CONTENT TO 90% */
@@ -73,8 +178,160 @@ table {
     margin: 0 auto;
 }
 
+nav {
+    background-color: var(--black);
+    color: var(--white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--blue);
+}
+
+h1 {
+    position: absolute;
+    left: 4rem;
+    color: var(--blue);
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+nav h2 {
+    visibility: hidden;
+    width: 1px;
+}
+
+nav ul {
+    /* display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+    align-items: center;
+    width: 200px; */
+
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+    text-align: center;
+    max-height: 0;
+}
+
+nav li {
+    /* padding: 20px 10px;
+    width: 100%;
+    text-align: center; */
+
+    display: block;
+    font-family: sans-serif;
+    font-size: 1.5rem;
+    padding: 1rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+    transition: background-color .3s ease-in;
+}
+
+nav a {
+    color: var(--blue);
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+nav li:hover {
+    width: 100%;
+    background: var(--blue);
+}
+
+nav li:hover a {
+    color: var(--black);
+}
+
+nav label {
+    cursor: pointer;
+    display: inline-block;
+    padding: 1.5rem;
+    user-select: none;
+}
+
+/* BUILDS THE MIDDLE LILNE OF THE HAMBURGER */
+label span {
+    background-color: white;
+    display: block;
+    height: .25rem;
+    position: relative;
+    transition: background-color .3s ease-out;
+    width: 2rem;
+    top: -.5rem;
+    left: 20rem;
+}
+
+/* BUILDS THE TOP AND BOTTOM LINES OF THE HAMBURGER*/
+label span:before,
+label span:after {
+    background: white;
+    content: '';
+    display: block;
+    height: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    width: 100%;
+
+}
+
+label span:before {
+    top: .75rem;
+}
+
+label span:after {
+    top: -.75rem;
+}
+
+input {
+    display: none;
+}
+
+/* ADDS HEIGHT THE NAV WHEN IT'S DROPPED DOWN */
+input:checked~ul {
+    max-height: 500px;
+}
+
+/* MAKES THE MIDDLE LINE OF THE HAMBURGER DISAPPEAR */
+/* input:checked~label span {
+    background: transparent;
+} */
+/* 
+ROTATES THE TOP LINE OF THE HAMBURGER INTO ONE SIDE OF THE X */
+/* input:checked~label span:before {
+    transform: rotate(-45deg);
+} */
+
+/* ROTATES THE BOTTOM LINE OF THE HAMBURGER INTO ONE SIDE OF THE X */
+/* input:checked~label span:after {
+    transform: rotate(45deg);
+} */
+
+/* LOCATION OF THE HAMBURGER */
+input:checked~label:not(.steps) span {
+    top: -2.5rem;
+}
+
+/* ADD FLOATING SVG LOGO BEFORE THE H1 */
+h1::before {
+    content: "";
+    position: absolute;
+    top: -2rem;
+    left: -4rem;
+    /* left: -.5rem; */
+    width: 3.75rem;
+    height: 3.75rem;
+    background: url('images/vanguard-logo.svg') no-repeat center/contain;
+    animation: down 3s linear 0s infinite alternate;
+}
+
 /* ADD TO "INNOVATION & INVESTMENT SECTION (Photo by Kevin Matos on Unsplash) */
- {
+header {
     background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('images/vanguard-hero.jpg') no-repeat center center/cover;
     height: 80vh;
     display: grid;
@@ -82,18 +339,130 @@ table {
     text-align: center;
     padding: 1rem;
     overflow: hidden;
+    box-shadow: inset 0px 15px 8px -10px var(--blue);
 }
 
-/* ADD FLOATING SVG LOGO BEFORE THE H1 */
- {
-    content: "";
-
-    left:-.5rem;
-    width: 3.75rem;
-    height: 3.75rem;
-    background: url('images/vanguard-logo.svg') no-repeat center/contain;
-
+header div {
+    width: 90%;
+    background-color: transparent;
+    /* padding: 10px; */
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
 }
+
+header p {
+    padding: 15px 0;
+}
+
+header button {
+    padding: 15px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    border: none;
+    color: var(--white);
+    background-color: var(--blue);
+    transition: background-color .3s, transform .3s ease-in-out, font-size .3s ease-in;
+}
+
+
+button:hover,
+form input[type='button']:hover {
+    background-color: #FF4500;
+    transform: scale(1.02);
+    font-size: 1.3rem;
+}
+
+
+
+@keyframes down {
+    0% {
+        top: -1.5rem;
+    }
+
+    50% {
+        top: -.5rem;
+    }
+
+    100% {
+        top: -1.5rem;
+    }
+}
+
+header {
+    color: var(--white);
+}
+
+section:nth-child(1) {
+    padding: 20px 0;
+}
+
+main h2,
+main h3 {
+    animation: slidedown 2s;
+}
+
+@keyframes slidedown {
+    0% {
+        transform: translate(0px, -15px);
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.grid {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40px;
+}
+
+/* div move up on hover */
+.grid div {
+    background-color: var(--blue);
+    padding: 15px 10px;
+    margin: 15px 0;
+    border-radius: 10px;
+    color: white;
+    transition: transform .5s ease-out;
+}
+
+
+.grid div:hover {
+    transform: translate(0, -20px);
+}
+
+section:nth-child(2) {
+    background-color: var(--blue);
+    color: var(--white);
+    padding: 20px;
+}
+
+section:nth-child(2) p {
+    margin: 10px;
+}
+
+
+table {
+    margin: 0 auto;
+    background-color: var(--black);
+    width: 100%;
+    text-align: center;
+}
+
+table tr:nth-child(even) {
+    background-color: var(--charcoal);
+}
+
+tr,
+th,
+td {
+    padding: 15px;
+    border: 1px solid var(--charcoal);
+}
+
 /* THIS ONE IS DONE FOR YOU */
 #bar-chart {
     display: grid;
@@ -102,20 +471,21 @@ table {
     justify-content: space-around;
     gap: 1rem;
     height: 300px;
-    width: 100%;
     max-width: 800px;
     padding: 1rem;
     position: relative;
 }
+
 /* ADD ON TRANSITION ON HEIGHT */
 .bar {
     width: 50px;
     background: var(--charcoal);
     border-radius: 10px;
     position: relative;
-    transition: ;
+    /* transition: ; */
     height: 0;
 }
+
 /* THIS ONE IS DONE FOR YOU */
 .bar::after {
     content: attr(data-year);
@@ -127,35 +497,153 @@ table {
     font-weight: bold;
     color: var(--white);
 }
+
 @keyframes stepUp {
     0% {
         height: 0;
     }
+
     100% {
         height: var(--height);
     }
 }
+
 /* ADD ANIMATION ON stepUp for 1s ease-in-out forwards */
 .bar {
     animation: stepUp 1s ease-in-out forwards;
 }
 
+section:nth-child(3) {
+    background-color: var(--black);
+    color: var(--white);
+}
 
-/* MEDIA QUERIES (MEDIUM) */ 
+section:nth-child(3) p {
+    margin: 10px;
+}
+
+section form {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+section form div {
+    display: flex;
+    flex-direction: column;
+}
+
+form input[type='text'],
+form input[type='email'] {
+    height: 40px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    border: 1px solid var(--blue);
+}
+
+form textarea {
+    border: 1px solid var(--blue);
+    margin-top: 5px;
+    margin-bottom: 20px;
+    height: 100px;
+}
+
+form input[type='button'] {
+    padding: 15px;
+    font-weight: bold;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    border: none;
+    color: var(--white);
+    background-color: var(--blue);
+    transition: background-color .3s, transform .3s ease-in-out, font-size .3s ease-in;
+}
+
+footer {
+    background-color: var(--black);
+    color: var(--white);
+    padding: 20px;
+    text-align: center;
+    line-height: 30px;
+}
+
+footer a {
+    color: var(--blue);
+}
+
+@media screen and (min-width: 800px) {
+
+    nav ul {
+        flex-direction: row;
+        width: auto;
+    }
+
+    .grid,
+    .data {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 20px;
+    }
+
+    table {
+        width: auto;
+        height: 85%;
+    }
+
+    section form div {
+        display: flex;
+        flex-direction: column;
+    }
 
     #results {
         grid-template-columns: 1fr 1fr;
     }
+
     .results-container {
         flex-direction: row;
         justify-content: space-between;
     }
+
     .results-table {
         width: 50%;
     }
+
     .bar-chart {
         width: 50%;
     }
 
+}
 
 /* MEDIA QUERIES (LARGE) */
+
+@media screen and (min-width: 1024px) {
+
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: 20px;
+    }
+
+    .data {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 20px;
+    }
+
+    section form {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 20px;
+    }
+
+    section form div {
+        display: flex;
+        flex-direction: column;
+    }
+
+    form input[type='button'] {
+        height: 50px;
+    }
+}
