@@ -350,7 +350,7 @@ header button {
 
 
 button:hover,
-form input[type='button']:hover {
+form input[type='submit']:hover {
     background-color: #FF4500;
     transform: scale(1.02);
     font-size: 1.3rem;
