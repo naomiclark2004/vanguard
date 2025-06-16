@@ -527,6 +527,7 @@ form input[type='email'] {
     margin-top: 5px;
     margin-bottom: 20px;
     border: 1px solid var(--blue);
+    outline: 3px solid var(--blue);
 }
 
 form textarea {
@@ -534,6 +535,7 @@ form textarea {
     margin-top: 5px;
     margin-bottom: 20px;
     height: 100px;
+    outline: 3px solid var(--blue);
 }
 
 form input[type='button'] {
